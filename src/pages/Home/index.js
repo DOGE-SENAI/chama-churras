@@ -2,8 +2,8 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import logo from "../../assets/logo.png";
-import LogoTitle from "../../assets/logoTitle.svg";
+import logo from "../../assets/images/logo.png";
+import LogoTitle from "../../assets/images/logoTitle.svg";
 
 const Home = () => {
 	return (
@@ -18,7 +18,7 @@ const Home = () => {
 				<FontAwesomeIcon
 					icon={faChevronRight}
 					size={20}
-					color="#9c4427"
+					color="#833116"
 					style={styles.buttonIcon}
 				/>
 			</TouchableOpacity>
@@ -31,8 +31,7 @@ const Home = () => {
 const styles = StyleSheet.create({
 	containerMain: {
 		flex: 1,
-		backgroundColor: "#9c4427",
-		// #833116
+		backgroundColor: "#833116",
 		alignItems: "center",
 		justifyContent: "space-around",
 	},
