@@ -6,7 +6,7 @@ import ArrowIcon from "../../assets/ArrowIcon";
 const Header = () => {
 	return (
 		<View style={styles.header}>
-			<ArrowIcon direction />
+			<ArrowIcon direction color="#fafafa" size={22} />
 
 			<View style={styles.containerLogo}>
 				<Image source={logo} style={styles.logoHeader} />
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 	},
 	containerLogo: {
-		width: "76%",
+		width: "80%",
 		justifyContent: "center",
 		alignItems: "center",
 		marginEnd: 40,
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
 	logoHeader: {
 		height: 56,
 		width: 66,
+		marginEnd: 16,
 	},
 });
 

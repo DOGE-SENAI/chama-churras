@@ -5,13 +5,13 @@ import {
 	faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-const ArrowIcon = ({ direction }) => {
+const ArrowIcon = ({ direction, size, color }) => {
 	return (
 		<TouchableOpacity style={styles.arrowIcon}>
 			<FontAwesomeIcon
 				icon={direction === "right" ? faChevronRight : faChevronLeft}
-				color="#fafafa"
-				size={26}
+				color={color}
+				size={size}
 			/>
 		</TouchableOpacity>
 	);
@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
 	arrowIcon: {
 		width: 22,
 		borderColor: "#fff",
+		marginHorizontal: 26,
 	},
 });
 
