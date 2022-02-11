@@ -1,13 +1,8 @@
-import {
-	View,
-	Text,
-	StyleSheet,
-	TouchableOpacity,
-	ScrollView,
-} from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import Header from "../../components/Header";
 import ItemsList from "../../components/ItemsList";
 import NavButton from "../../components/NavButton";
+import ButtonAdd from "../../components/ButtonAdd";
 
 const Others = () => {
 	return (
@@ -32,12 +27,7 @@ const Others = () => {
 					</View>
 
 					<View style={styles.containerButton}>
-						<NavButton
-							text="Adicionar"
-							arrowDirection="right"
-							arrowColor="#fafafa"
-							arrowSize={24}
-						/>
+						<ButtonAdd />
 					</View>
 				</View>
 			</View>

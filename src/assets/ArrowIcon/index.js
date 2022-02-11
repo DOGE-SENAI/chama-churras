@@ -1,4 +1,4 @@
-import { TouchableOpacity, StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
 	faChevronLeft,
@@ -7,13 +7,13 @@ import {
 
 const ArrowIcon = ({ direction, size, color }) => {
 	return (
-		<TouchableOpacity style={styles.arrowIcon}>
+		<View style={styles.arrowIcon}>
 			<FontAwesomeIcon
 				icon={direction === "right" ? faChevronRight : faChevronLeft}
 				color={color}
 				size={size}
 			/>
-		</TouchableOpacity>
+		</View>
 	);
 };
 

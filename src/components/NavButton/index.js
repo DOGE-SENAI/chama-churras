@@ -1,16 +1,26 @@
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import ArrowIcon from "../../assets/ArrowIcon";
 
-const NavButton = ({ text, arrowDirection, arrowColor, arrowSize }) => {
+const NavButton = ({
+	text,
+	withArrow,
+	arrowDirection,
+	arrowColor,
+	arrowSize,
+}) => {
 	return (
 		<TouchableOpacity style={styles.button}>
-			<Text style={styles.buttonText}>{text}</Text>
+			<View style={styles.contentBtn}>
+				<Text style={styles.buttonText}>{text}</Text>
 
-			<ArrowIcon
-				direction={arrowDirection}
-				color={arrowColor}
-				size={arrowSize}
-			/>
+				{withArrow && (
+					<ArrowIcon
+						direction={arrowDirection}
+						color={arrowColor}
+						size={arrowSize}
+					/>
+				)}
+			</View>
 		</TouchableOpacity>
 	);
 };
@@ -22,14 +32,19 @@ const styles = StyleSheet.create({
 		width: 260,
 		marginBottom: 23,
 		alignItems: "center",
-		justifyContent: "center",
+		justifyContent: "flex-end",
 		flexDirection: "row",
 		backgroundColor: "#833116",
+	},
+	contentBtn: {
+		alignItems: "center",
+		justifyContent: "space-between",
+		flexDirection: "row",
+		width: "70%",
 	},
 	buttonText: {
 		fontSize: 23,
 		color: "#E6E8E1",
-		marginLeft: 30,
 	},
 });
 
