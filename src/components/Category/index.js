@@ -1,11 +1,11 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 
-const Category = ({ text, image, textBelow}) => {
+const Category = ({ text, image, textBelow, onClick}) => {
     return(
-        <TouchableOpacity >
+        <TouchableOpacity onPress={onClick} >
             <View style={textBelow ? styles.textBelow : styles.textAside}>
-                <Image source={image} style={styles.image}/>
+                <Image source={image} style={textBelow ? styles.image : [styles.image, styles.imageSpacing]}/>
 
                 <Text style={styles.text}>{text}</Text>
             </View>
@@ -27,7 +27,10 @@ const styles = StyleSheet.create({
     },
     image: {
         height: 112,
-        width: 112,
+        width: 112
+    },
+    imageSpacing: {
+        marginRight: 25
     },
     text: {
         fontSize: 30,

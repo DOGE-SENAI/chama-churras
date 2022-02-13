@@ -2,9 +2,9 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const ButtonAdd = () => {
+const ButtonAdd = ({ onClick }) => {
 	return (
-		<TouchableOpacity style={styles.button}>
+		<TouchableOpacity style={styles.button} onPress={onClick}>
 			<Text style={styles.buttonText}>Adicionar</Text>
 
 			<View style={styles.containerBtn}>
