@@ -1,12 +1,17 @@
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { useNavigation } from "@react-navigation/native";
 import logo from "../../assets/images/logo.png";
 import ArrowIcon from "../../assets/ArrowIcon";
 
-const Header = () => {
+const Header = ({ page }) => {
+	const navigation = useNavigation();
+
 	return (
 		<View style={styles.header}>
-			<ArrowIcon direction color="#fafafa" size={22} />
+			<TouchableOpacity onPress={() => navigation.navigate(page)}>
+				<ArrowIcon direction color="#fafafa" size={22} />
+			</TouchableOpacity>
 
 			<View style={styles.containerLogo}>
 				<Image source={logo} style={styles.logoHeader} />

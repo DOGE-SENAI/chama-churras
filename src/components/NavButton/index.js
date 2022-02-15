@@ -1,4 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import ArrowIcon from "../../assets/ArrowIcon";
 
 const NavButton = ({
@@ -7,9 +8,17 @@ const NavButton = ({
 	arrowDirection,
 	arrowColor,
 	arrowSize,
+	nextPage,
 }) => {
+	const navigation = useNavigation();
+
 	return (
-		<TouchableOpacity style={styles.button}>
+		<TouchableOpacity
+			style={styles.button}
+			onPress={() => {
+				navigation.navigate(nextPage);
+			}}
+		>
 			<View style={styles.contentBtn}>
 				<Text style={styles.buttonText}>{text}</Text>
 

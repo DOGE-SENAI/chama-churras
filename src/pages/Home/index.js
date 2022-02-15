@@ -2,10 +2,13 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { useNavigation } from "@react-navigation/native";
 import logo from "../../assets/images/logo.png";
 import LogoTitle from "../../assets/images/logoTitle.svg";
 
 const Home = () => {
+	const navigation = useNavigation();
+
 	return (
 		<View style={styles.containerMain}>
 			<View style={styles.hero}>
@@ -13,7 +16,10 @@ const Home = () => {
 				<LogoTitle />
 			</View>
 
-			<TouchableOpacity style={styles.button}>
+			<TouchableOpacity
+				style={styles.button}
+				onPress={() => navigation.navigate("Persons")}
+			>
 				<Text style={styles.buttonText}>Começar</Text>
 				<FontAwesomeIcon
 					icon={faChevronRight}

@@ -1,18 +1,26 @@
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import Header from "../../components/Header";
 import ArrowIcon from "../../assets/ArrowIcon";
 import NavButton from "../../components/NavButton";
 
 const Options = () => {
+	const navigation = useNavigation();
+
 	return (
 		<>
-			<Header />
+			<Header page="Persons" />
 
 			<View style={styles.containerMain}>
-				<Text style={styles.title}>Escolha uma opção</Text>
+				<Text style={styles.title}>Escolha uma opção </Text>
 				<View style={styles.content}>
 					<View>
-						<TouchableOpacity style={styles.button}>
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => {
+								navigation.navigate("Meats");
+							}}
+						>
 							<Text style={styles.buttonText}>Carnes</Text>
 							<ArrowIcon direction="right" color="#FFF" size={20} />
 						</TouchableOpacity>
@@ -22,22 +30,42 @@ const Options = () => {
 							<ArrowIcon direction="right" color="#FFF" size={20} />
 						</TouchableOpacity>
 
-						<TouchableOpacity style={styles.button}>
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => {
+								navigation.navigate("Accomp");
+							}}
+						>
 							<Text style={styles.buttonText}>Acompanhamentos</Text>
 							<ArrowIcon direction="right" color="#FFF" size={20} />
 						</TouchableOpacity>
 
-						<TouchableOpacity style={styles.button}>
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => {
+								navigation.navigate("Vegetarians");
+							}}
+						>
 							<Text style={styles.buttonText}>Opções vegetarianas</Text>
 							<ArrowIcon direction="right" color="#FFF" size={20} />
 						</TouchableOpacity>
 
-						<TouchableOpacity style={styles.button}>
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => {
+								navigation.navigate("Utilities");
+							}}
+						>
 							<Text style={styles.buttonText}>Utilitários</Text>
 							<ArrowIcon direction="right" color="#FFF" size={20} />
 						</TouchableOpacity>
 
-						<TouchableOpacity style={styles.button}>
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => {
+								navigation.navigate("Others");
+							}}
+						>
 							<Text style={styles.buttonText}>Outros</Text>
 							<ArrowIcon direction="right" color="#FFF" size={20} />
 						</TouchableOpacity>

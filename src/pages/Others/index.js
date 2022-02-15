@@ -1,13 +1,15 @@
 import { View, Text, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import Header from "../../components/Header";
 import ItemsList from "../../components/ItemsList";
-import NavButton from "../../components/NavButton";
 import ButtonAdd from "../../components/ButtonAdd";
 
 const Others = () => {
+	const navigation = useNavigation();
+
 	return (
 		<>
-			<Header />
+			<Header page="Options" />
 
 			<View style={styles.containerMain}>
 				<View style={styles.pageTop}>
@@ -27,7 +29,11 @@ const Others = () => {
 					</View>
 
 					<View style={styles.containerButton}>
-						<ButtonAdd />
+						<ButtonAdd
+							onClick={() => {
+								navigation.navigate("Options");
+							}}
+						/>
 					</View>
 				</View>
 			</View>

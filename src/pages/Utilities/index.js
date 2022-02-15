@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import ItemsList from "../../components/ItemsList";
 import ButtonAdd from "../../components/ButtonAdd";
 
-const Vegetarians = () => {
+const Utilities = () => {
 	const navigation = useNavigation();
 
 	return (
@@ -13,19 +13,19 @@ const Vegetarians = () => {
 
 			<View style={styles.containerMain}>
 				<View style={styles.pageTop}>
-					<Text style={styles.pageName}>Opções vegetarianas</Text>
+					<Text style={styles.pageName}>Utilitários</Text>
 				</View>
 
 				<View style={styles.content}>
 					<Text style={styles.title}>Selecione os itens</Text>
 
 					<View style={styles.containerList}>
-						<ItemsList item="Tomate" />
-						<ItemsList item="Tofu" />
-						<ItemsList item="Abobrinha" />
-						<ItemsList item="Cogumelos" />
-						<ItemsList item="Aspargos" />
-						<ItemsList item="Milho assado" />
+						<ItemsList item="Garfos" />
+						<ItemsList item="Facas" />
+						<ItemsList item="Pratos" />
+						<ItemsList item="Copos" />
+						<ItemsList item="Guardanapos" />
+						<ItemsList item="Isqueiro" />
 					</View>
 
 					<View style={styles.containerButton}>
@@ -76,4 +76,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default Vegetarians;
+export default Utilities;

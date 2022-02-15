@@ -1,9 +1,7 @@
 import { StyleSheet, View, Text } from "react-native";
-import { SafeAreaView, TextInput, TouchableOpacity } from "react-native";
+import { SafeAreaView, TextInput } from "react-native";
 import React from "react";
 import Header from "../../components/Header";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import NavButton from "../../components/NavButton";
 
 const Persons = () => {
@@ -13,7 +11,8 @@ const Persons = () => {
 
 	return (
 		<>
-			<Header />
+			<Header page="Home" />
+
 			<View style={styles.containerMain}>
 				<Text style={styles.title}>Quantidade de Pessoas</Text>
 
@@ -54,18 +53,9 @@ const Persons = () => {
 						arrowDirection="right"
 						arrowColor="#e6e8e1"
 						arrowSize={20}
+						nextPage="Options"
 					/>
 				</View>
-
-				{/* <TouchableOpacity style={styles.button}>
-					<Text style={styles.buttonText}>PRÓXIMO</Text>
-					<FontAwesomeIcon
-						icon={faChevronRight}
-						size={20}
-						color="#e6e8e1"
-						style={styles.buttonIcon}
-					/>
-				</TouchableOpacity> */}
 			</View>
 		</>
 	);
