@@ -21,11 +21,7 @@ const Others = () => {
 
 					<View style={styles.containerList}>
 						<ItemsList item="Carvão" />
-						<ItemsList item="Sal" />
-						<ItemsList item="Arroz" />
-						<ItemsList item="Abacaxi" />
-						<ItemsList item="Sei lá" />
-						<ItemsList item="Caixa de som" />
+						<ItemsList item="Sal grosso" />
 					</View>
 
 					<View style={styles.containerButton}>

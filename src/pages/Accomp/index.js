@@ -20,15 +20,10 @@ const Accomp = () => {
 					<Text style={styles.title}>Selecione os itens</Text>
 
 					<View style={styles.containerList}>
-						<ItemsList item="Abacaxi" />
 						<ItemsList item="Farofa" />
-						<ItemsList item="Batata" />
 						<ItemsList item="Arroz" />
 						<ItemsList item="Vinagrete" />
-						<ItemsList item="Purê" />
-						<ItemsList item="Salada" />
 						<ItemsList item="Pão de alho" />
-						<ItemsList item="Espeto de queijo coalho" />
 					</View>
 
 					<View style={styles.containerButton}>

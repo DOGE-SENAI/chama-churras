@@ -25,7 +25,6 @@ const Utilities = () => {
 						<ItemsList item="Pratos" />
 						<ItemsList item="Copos" />
 						<ItemsList item="Guardanapos" />
-						<ItemsList item="Isqueiro" />
 					</View>
 
 					<View style={styles.containerButton}>

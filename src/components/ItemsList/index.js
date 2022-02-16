@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import { useState } from "react";
 import { Checkbox } from "react-native-paper";
+import { Ingredientes } from "../../calculate/Ingredients";
 
 const ItemsList = ({ item }) => {
 	const [checked, setChecked] = useState(false);
@@ -12,6 +13,11 @@ const ItemsList = ({ item }) => {
 				status={checked ? "checked" : "unchecked"}
 				onPress={() => {
 					setChecked(!checked);
+					if(Ingredientes.getIngredientes().includes("" + item)) {
+						Ingredientes.removeIngrediente(item);
+					} else {
+						Ingredientes.addIngrediente(item);
+					}
 				}}
 				color={"green"}
 				uncheckedColor={"black"}

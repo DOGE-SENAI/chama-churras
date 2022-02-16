@@ -73,19 +73,19 @@ const Meats = () => {
 					<View style={[styles.containerList, bovina]}>
 						<ItemsList item="Contra-filé" />
 						<ItemsList item="Picanha" />
-						<ItemsList item="File Mignon" />
-						<ItemsList item="Alcátra" />
+						<ItemsList item="Alcatra" />
 						<ItemsList item="Maminha" />
 					</View>
 
 					<View style={[styles.containerList, frango]}>
 						<ItemsList item="Coração" />
 						<ItemsList item="Asinha" />
+						<ItemsList item="Coxinha" />
 					</View>
 
 					<View style={[styles.containerList, suina]}>
 						<ItemsList item="Linguiça" />
-						<ItemsList item="Bistela" />
+						<ItemsList item="Bisteca" />
 						<ItemsList item="Costela" />
 						<ItemsList item="Panceta" />
 					</View>

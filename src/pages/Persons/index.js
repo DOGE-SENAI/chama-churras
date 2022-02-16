@@ -1,18 +1,21 @@
 import { StyleSheet, View, Text } from "react-native";
-import { SafeAreaView, TextInput } from "react-native";
+import { SafeAreaView, TextInput, TouchableOpacity } from "react-native";
 import React from "react";
 import Header from "../../components/Header";
 import NavButton from "../../components/NavButton";
+import { Pessoas } from "../../calculate/Persons";
 
 const Persons = () => {
+
+	const pessoas = new Pessoas();
+
 	const [male, setMale] = React.useState(null);
 	const [female, setFemale] = React.useState(null);
 	const [children, setChildren] = React.useState(null);
 
 	return (
 		<>
-			<Header page="Home" />
-
+			<Header />
 			<View style={styles.containerMain}>
 				<Text style={styles.title}>Quantidade de Pessoas</Text>
 
@@ -20,7 +23,10 @@ const Persons = () => {
 				<SafeAreaView>
 					<TextInput
 						style={styles.input}
-						onChangeText={setMale}
+						onChangeText={() => {
+							setMale;
+							Pessoas.setMen(Number.parseInt(male));
+						}}
 						value={male}
 						keyboardType="numeric"
 					></TextInput>
@@ -30,7 +36,10 @@ const Persons = () => {
 				<SafeAreaView>
 					<TextInput
 						style={styles.input}
-						onChangeText={setFemale}
+						onChangeText={() => {
+							setFemale;
+							Pessoas.setWoman(Number.parseInt(female));
+						}}
 						value={female}
 						keyboardType="numeric"
 					></TextInput>
@@ -40,7 +49,10 @@ const Persons = () => {
 				<SafeAreaView>
 					<TextInput
 						style={styles.input}
-						onChangeText={setChildren}
+						onChangeText={() => {
+							setChildren;
+							Pessoas.setKids(Number.parseInt(children));
+						}}
 						value={children}
 						keyboardType="numeric"
 					></TextInput>
@@ -56,6 +68,16 @@ const Persons = () => {
 						nextPage="Options"
 					/>
 				</View>
+
+				{/* <TouchableOpacity style={styles.button}>
+					<Text style={styles.buttonText}>PRÓXIMO</Text>
+					<FontAwesomeIcon
+						icon={faChevronRight}
+						size={20}
+						color="#e6e8e1"
+						style={styles.buttonIcon}
+					/>
+				</TouchableOpacity> */}
 			</View>
 		</>
 	);

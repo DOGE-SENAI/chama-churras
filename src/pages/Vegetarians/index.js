@@ -22,10 +22,7 @@ const Vegetarians = () => {
 					<View style={styles.containerList}>
 						<ItemsList item="Tomate" />
 						<ItemsList item="Tofu" />
-						<ItemsList item="Abobrinha" />
-						<ItemsList item="Cogumelos" />
-						<ItemsList item="Aspargos" />
-						<ItemsList item="Milho assado" />
+						<ItemsList item="Abacaxi" />
 					</View>
 
 					<View style={styles.containerButton}>
