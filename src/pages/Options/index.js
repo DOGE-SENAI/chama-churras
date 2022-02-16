@@ -25,7 +25,12 @@ const Options = () => {
 							<ArrowIcon direction="right" color="#FFF" size={20} />
 						</TouchableOpacity>
 
-						<TouchableOpacity style={styles.button}>
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => {
+								navigation.navigate("Drinks");
+							}}
+						>
 							<Text style={styles.buttonText}>Bebidas</Text>
 							<ArrowIcon direction="right" color="#FFF" size={20} />
 						</TouchableOpacity>
@@ -72,7 +77,7 @@ const Options = () => {
 					</View>
 
 					<View style={styles.containerButton}>
-						<NavButton text="Calcular" withArrow={false} />
+						<NavButton text="Calcular" withArrow={false} nextPage="Result" />
 					</View>
 				</View>
 			</View>

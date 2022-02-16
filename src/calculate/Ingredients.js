@@ -1,22 +1,19 @@
 class Ingredientes {
+	constructor() {}
 
-    constructor(){
-    }
+	static ingredientes = [];
+	static addIngrediente(obj) {
+		this.ingredientes.push(obj);
+	}
 
-    static ingredientes = [];
-    static addIngrediente(obj) {
-        this.ingredientes.push(obj) 
-    }
+	static removeIngrediente(obj) {
+		var l = this.ingredientes.filter((item) => item !== obj);
+		this.ingredientes = l;
+	}
 
-    static removeIngrediente(obj) {
-        var l = this.ingredientes.filter((item) => item !== obj);
-        this.ingredientes = l;
-    }
-
-    static getIngredientes(obj) {
-        return this.ingredientes;
-    }
-
+	static getIngredientes(obj) {
+		return this.ingredientes;
+	}
 }
 
-module.exports = {Ingredientes}
+module.exports = { Ingredientes };
