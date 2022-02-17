@@ -8,7 +8,7 @@ const Accomp = () => {
 	const navigation = useNavigation();
 
 	return (
-		<>
+		<ScrollView style={styles.scrollContainer}>
 			<Header page="Options" />
 
 			<View style={styles.containerMain}>
@@ -35,7 +35,7 @@ const Accomp = () => {
 					</View>
 				</View>
 			</View>
-		</>
+		</ScrollView>
 	);
 };
 
@@ -71,6 +71,9 @@ const styles = StyleSheet.create({
 	},
 	containerButton: {
 		margin: 20,
+	},
+	scrollContainer: {
+		backgroundColor: "#E6E8E1",
 	},
 });
 

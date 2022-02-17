@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../../components/Header";
 import ItemsList from "../../components/ItemsList";
@@ -8,7 +8,7 @@ const Others = () => {
 	const navigation = useNavigation();
 
 	return (
-		<>
+		<ScrollView style={styles.scrollContainer}>
 			<Header page="Options" />
 
 			<View style={styles.containerMain}>
@@ -33,7 +33,7 @@ const Others = () => {
 					</View>
 				</View>
 			</View>
-		</>
+		</ScrollView>
 	);
 };
 
@@ -69,6 +69,9 @@ const styles = StyleSheet.create({
 	},
 	containerButton: {
 		margin: 20,
+	},
+	scrollContainer: {
+		backgroundColor: "#E6E8E1",
 	},
 });
 

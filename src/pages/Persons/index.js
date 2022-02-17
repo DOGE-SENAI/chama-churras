@@ -1,12 +1,11 @@
-import { StyleSheet, View, Text } from "react-native";
-import { SafeAreaView, TextInput, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, ScrollView } from "react-native";
+import { SafeAreaView, TextInput } from "react-native";
 import React from "react";
 import Header from "../../components/Header";
 import NavButton from "../../components/NavButton";
 import { Pessoas } from "../../calculate/Persons";
 
 const Persons = () => {
-
 	const pessoas = new Pessoas();
 
 	const [male, setMale] = React.useState(null);
@@ -14,8 +13,9 @@ const Persons = () => {
 	const [children, setChildren] = React.useState(null);
 
 	return (
-		<>
-			<Header />
+		<ScrollView style={styles.scrollContainer}>
+			<Header page="Home" />
+
 			<View style={styles.containerMain}>
 				<Text style={styles.title}>Quantidade de Pessoas</Text>
 
@@ -68,18 +68,8 @@ const Persons = () => {
 						nextPage="Options"
 					/>
 				</View>
-
-				{/* <TouchableOpacity style={styles.button}>
-					<Text style={styles.buttonText}>PRÓXIMO</Text>
-					<FontAwesomeIcon
-						icon={faChevronRight}
-						size={20}
-						color="#e6e8e1"
-						style={styles.buttonIcon}
-					/>
-				</TouchableOpacity> */}
 			</View>
-		</>
+		</ScrollView>
 	);
 };
 
@@ -124,6 +114,9 @@ const styles = StyleSheet.create({
 	},
 	buttonIcon: {
 		marginLeft: 26,
+	},
+	scrollContainer: {
+		backgroundColor: "#E6E8E1",
 	},
 });
 

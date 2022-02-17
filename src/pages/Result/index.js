@@ -1,21 +1,16 @@
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, ScrollView } from "react-native";
 import React from "react";
 import Header from "../../components/Header";
-import ResultList from "../../components/ResultList";
 
 const Result = () => {
 	return (
-		<>
+		<ScrollView style={styles.scrollContainer}>
 			<Header page="Options" />
 
 			<View style={styles.containerMain}>
 				<Text style={styles.title}>Resultado</Text>
-
-				<View style={styles.result}>
-					<ResultList item="Carne" result="43kg" />
-				</View>
 			</View>
-		</>
+		</ScrollView>
 	);
 };
 
@@ -37,6 +32,9 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		alignItems: "center",
 		justifyContent: "space-around",
+	},
+	scrollContainer: {
+		backgroundColor: "#E6E8E1",
 	},
 });
 

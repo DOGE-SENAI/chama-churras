@@ -1,13 +1,14 @@
+import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import Category from "../../components/Category";
 import Header from "../../components/Header";
-import aguaImg from "../../assets/images/agua.png";
-import cachaçaImg from "../../assets/images/cachaça.png";
-import cervejaImg from "../../assets/images/cerveja.png";
-import refriImg from "../../assets/images/refri.png";
-import React from "react";
 import ItemsList from "../../components/ItemsList";
 import ButtonAdd from "../../components/ButtonAdd";
+
+import waterIcon from "../../assets/images/water.png";
+import liquorIcon from "../../assets/images/liquor.png";
+import beerIcon from "../../assets/images/beer.png";
+import sodaIcon from "../../assets/images/soda.png";
 
 const Drinks = () => {
 	const [geral, setGeral] = React.useState(styles.hide);
@@ -24,6 +25,7 @@ const Drinks = () => {
 	return (
 		<ScrollView style={styles.scrollContainer}>
 			<Header page="Options" />
+
 			<View style={styles.containerMain}>
 				<View style={styles.pageTop}>
 					<Text style={styles.pageName}>Bebidas</Text>
@@ -32,7 +34,7 @@ const Drinks = () => {
 				<View style={[styles.icons, icones]}>
 					<Category
 						text="Água / Suco"
-						image={aguaImg}
+						image={waterIcon}
 						textBelow={true}
 						onClick={() => {
 							setGeral(styles.view);
@@ -45,7 +47,7 @@ const Drinks = () => {
 				<View style={[styles.icons, icones]}>
 					<Category
 						text="Cachaça"
-						image={cachaçaImg}
+						image={liquorIcon}
 						textBelow={true}
 						onClick={() => {
 							setGeral(styles.view);
@@ -58,7 +60,7 @@ const Drinks = () => {
 				<View style={[styles.icons, icones]}>
 					<Category
 						text="Cerveja"
-						image={cervejaImg}
+						image={beerIcon}
 						textBelow={true}
 						onClick={() => {
 							setGeral(styles.view);
@@ -71,7 +73,7 @@ const Drinks = () => {
 				<View style={[styles.icons, icones]}>
 					<Category
 						text="Refrigerante"
-						image={refriImg}
+						image={sodaIcon}
 						textBelow={true}
 						onClick={() => {
 							setGeral(styles.view);
@@ -149,6 +151,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: "#E6E8E1",
 		alignItems: "center",
+		marginBottom: 30,
 	},
 	pageTop: {
 		height: 70,

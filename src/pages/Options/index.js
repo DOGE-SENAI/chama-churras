@@ -1,4 +1,10 @@
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import {
+	StyleSheet,
+	View,
+	Text,
+	TouchableOpacity,
+	ScrollView,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../../components/Header";
 import ArrowIcon from "../../assets/ArrowIcon";
@@ -8,7 +14,7 @@ const Options = () => {
 	const navigation = useNavigation();
 
 	return (
-		<>
+		<ScrollView style={styles.scrollContainer}>
 			<Header page="Persons" />
 
 			<View style={styles.containerMain}>
@@ -81,7 +87,7 @@ const Options = () => {
 					</View>
 				</View>
 			</View>
-		</>
+		</ScrollView>
 	);
 };
 
@@ -129,6 +135,9 @@ const styles = StyleSheet.create({
 
 	containerButton: {
 		margin: 50,
+	},
+	scrollContainer: {
+		backgroundColor: "#E6E8E1",
 	},
 });
 

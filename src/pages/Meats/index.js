@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Category from "../../components/Category";
 import Header from "../../components/Header";
 import bovinaImg from "../../assets/images/bovina.png";
@@ -20,7 +20,7 @@ const Meats = () => {
 	const [suina, setSuina] = React.useState(styles.hide);
 
 	return (
-		<>
+		<ScrollView style={styles.scrollContainer}>
 			<Header page="Options" />
 
 			<View style={styles.containerMain}>
@@ -103,7 +103,7 @@ const Meats = () => {
 					</View>
 				</View>
 			</View>
-		</>
+		</ScrollView>
 	);
 };
 
@@ -147,6 +147,9 @@ const styles = StyleSheet.create({
 	icons: {
 		marginBottom: 10,
 		marginTop: 60,
+	},
+	scrollContainer: {
+		backgroundColor: "#E6E8E1",
 	},
 });
 
