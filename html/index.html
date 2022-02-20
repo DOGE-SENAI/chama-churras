@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+		/>
+		<style>
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+					Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+			}
+
+			main {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+
+			h1 {
+				font-weight: 500;
+				text-align: center;
+			}
+
+			table,
+			th,
+			td {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1>Resultado do Cálculo do Churrasco</h1>
+
+			<div>
+				<h2>Pessoas</h2>
+				<table>
+					<tr>
+						<th>Pessoas</th>
+						<td>Quantidade</td>
+					</tr>
+					<tr>
+						<th>Homens</th>
+						<td>6</td>
+					</tr>
+					<tr>
+						<th>Mulheres</th>
+						<td>7</td>
+					</tr>
+					<tr>
+						<th>Crianças</th>
+						<td>3</td>
+					</tr>
+					<tr>
+						<th>Total</th>
+						<td>16</td>
+					</tr>
+				</table>
+
+				<h2>Carnes</h2>
+				<table>
+					<tr>
+						<th>Carnes</th>
+						<th>Tipos</th>
+					</tr>
+
+					<!-- Bovina -->
+					<tr>
+						<th rowspan="4">Bovina</th>
+						<td>Contra-filé</td>
+					</tr>
+					<tr>
+						<td>Picanha</td>
+					</tr>
+					<tr>
+						<td>Alcatra</td>
+					</tr>
+					<tr>
+						<td>Maminha</td>
+					</tr>
+					<tr>
+						<th>Total</th>
+						<td>40 Kg</td>
+					</tr>
+
+					<!-- Frango -->
+					<tr>
+						<th rowspan="3">Frango</th>
+						<td>Coração</td>
+					</tr>
+					<tr>
+						<td>Asinha</td>
+					</tr>
+					<tr>
+						<td>Coxinha</td>
+					</tr>
+					<tr>
+						<th>Total</th>
+						<td>40 Kg</td>
+					</tr>
+
+					<!-- Suína -->
+					<tr>
+						<th rowspan="4">Suína</th>
+						<td>Bisteca</td>
+					</tr>
+					<tr>
+						<td>Linguiça</td>
+					</tr>
+					<tr>
+						<td>Costela</td>
+					</tr>
+					<tr>
+						<td>Panceta</td>
+					</tr>
+					<tr>
+						<th>Total</th>
+						<td>40 Kg</td>
+					</tr>
+				</table>
+
+				<h2>Bebidas</h2>
+				<table>
+					<tr>
+						<th>Bebidas</th>
+						<th>Tipos</th>
+					</tr>
+
+					<!-- Cervejas -->
+					<tr>
+						<th rowspan="4">Cerveja</th>
+						<td>Brahma</td>
+					</tr>
+					<tr>
+						<td>Skol</td>
+					</tr>
+					<tr>
+						<td>Corona</td>
+					</tr>
+					<tr>
+						<td>Stella</td>
+					</tr>
+					<tr>
+						<th>Total</th>
+						<td>40 Litros</td>
+					</tr>
+
+					<!-- Água e Sucos -->
+					<tr>
+						<th rowspan="3">água / suco</th>
+						<td>água</td>
+					</tr>
+					<tr>
+						<td>suco</td>
+					</tr>
+					<tr>
+						<td>energéticos</td>
+					</tr>
+					<tr>
+						<th>Total</th>
+						<td>40 Litros</td>
+					</tr>
+
+					<!-- Cachaças -->
+					<tr>
+						<th rowspan="5">Cachaça</th>
+						<td>51</td>
+					</tr>
+					<tr>
+						<td>Vodka</td>
+					</tr>
+					<tr>
+						<td>Tequila</td>
+					</tr>
+					<tr>
+						<td>Whisky</td>
+					</tr>
+					<tr>
+						<td>Corote</td>
+					</tr>
+					<tr>
+						<th>Total</th>
+						<td>40 Litros</td>
+					</tr>
+
+					<!-- Refrigerante -->
+					<tr>
+						<th rowspan="7">Refrigerante</th>
+						<td>Pepsi</td>
+					</tr>
+					<tr>
+						<td>Fanta</td>
+					</tr>
+					<tr>
+						<td>Dolly</td>
+					</tr>
+					<tr>
+						<td>Coca-cola</td>
+					</tr>
+					<tr>
+						<td>Guaraná</td>
+					</tr>
+					<tr>
+						<td>Sprite</td>
+					</tr>
+					<tr>
+						<td>Tubaína</td>
+					</tr>
+					<tr>
+						<th>Total</th>
+						<td>40 Litros</td>
+					</tr>
+				</table>
+
+				<h2>Acompanhamentos</h2>
+				<table>
+					<tr>
+						<th>Items</th>
+						<th>Quatidade</th>
+					</tr>
+
+					<tr>
+						<td>Farofa</td>
+						<td>12 kg</td>
+					</tr>
+					<tr>
+						<td>Arroz</td>
+						<td>12 kg</td>
+					</tr>
+					<tr>
+						<td>Vinagrete</td>
+						<td>12 g</td>
+					</tr>
+					<tr>
+						<td>Pão de Alho</td>
+						<td>12</td>
+					</tr>
+				</table>
+
+				<h2>Opções Vegetarianas</h2>
+				<table>
+					<tr>
+						<th>Items</th>
+						<th>Quatidade</th>
+					</tr>
+
+					<tr>
+						<td>Tomate</td>
+						<td>32</td>
+					</tr>
+					<tr>
+						<td>Tofu</td>
+						<td>32</td>
+					</tr>
+					<tr>
+						<td>Abacaxi</td>
+						<td>32</td>
+					</tr>
+				</table>
+			</div>
+
+			<footer>Chama Churras - Equipe DOGE</footer>
+		</main>
+	</body>
+</html>
