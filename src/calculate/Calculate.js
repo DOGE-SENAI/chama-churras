@@ -119,37 +119,38 @@ function calcular() {
 				cachaH += h * 0.5;
 				cachaM += m * 0.25;
 				break;
+			// Cerveja
 			case "Skol":
-				cervH += h * 0.5;
-				cervM += m * 0.25;
+				cervH += h * 2;
+				cervM += m * 1;
 				break;
 			case "Brahma":
-				cervH += h * 0.5;
-				cervM += m * 0.25;
+				cervH += h * 2;
+				cervM += m * 1;
 				break;
 			case "Corona":
-				cervH += h * 0.5;
-				cervM += m * 0.25;
+				cervH += h * 2;
+				cervM += m * 1;
 				break;
 			case "Stella":
-				cervH += h * 0.5;
-				cervM += m * 0.25;
+				cervH += h * 2;
+				cervM += m * 1;
 				break;
 			case "Itaipava":
-				cervH += h * 0.5;
-				cervM += m * 0.25;
+				cervH += h * 2;
+				cervM += m * 1;
 				break;
 			case "Proibida":
-				cervH += h * 0.5;
-				cervM += m * 0.25;
+				cervH += h * 2;
+				cervM += m * 1;
 				break;
 			case "Budweiser":
-				cervH += h * 0.5;
-				cervM += m * 0.25;
+				cervH += h * 2;
+				cervM += m * 1;
 				break;
 			case "Heineken":
-				cervH += h * 0.5;
-				cervM += m * 0.25;
+				cervH += h * 2;
+				cervM += m * 1;
 				break;
 			// REFRIGERANTE
 			case "Pepsi":
@@ -236,24 +237,33 @@ function calcular() {
 		carnes: (carnesH + carnesM + carnesC) / 100, // Kilos
 		frangos: (frangoH + frangoM + frangoC) / 100, // Kilos
 		coracao: (coraH + coraM + coraC) / 100, // Kilos
+		suina: (suinaH + suinaM + suinaC) / 100, //Kilos
 		aguas:
 			agua === 0
 				? 0
 				: agua / 1000 >= 1.5
-				? Math.round(agua / 1000)
-				: Math.round(agua / 1000) + 1, // Garrafas
+					? Math.round(agua / 1000)
+					: Math.round(agua / 1000) + 1, // Garrafas
 		sucos:
 			suco === 0
 				? 0
 				: suco / 1000 >= 1.5
-				? Math.round(suco / 1000)
-				: Math.round(suco / 1000) + 1, // Garrafas
+					? Math.round(suco / 1000)
+					: Math.round(suco / 1000) + 1, // Garrafas
 		energeticos:
 			energe === 0
 				? 0
 				: energe / 1000 >= 1.5
-				? Math.round(energe / 1000)
-				: Math.round(energe / 1000) + 1, // Garrafas
+					? Math.round(energe / 1000)
+					: Math.round(energe / 1000) + 1, // Garrafas
+		cachaca:
+			((cachaH + cachaM) === 0)
+				? 0
+				:
+				Math.round((cachaH + cachaM)) === 0
+					? 1
+					: Math.round((cachaH + cachaM)), //Garrafas
+		cerveja: (cervH + cervM), // Litros
 		refrigerante: (refriH + refriM + refriC) / 1000, // Garrafas
 		farofa: farof / 1000, // Kilos
 		arroz: arr / 1000, // Kilos
@@ -265,8 +275,8 @@ function calcular() {
 			abaca === 0
 				? 0
 				: Math.round(abaca) > abaca
-				? Math.round(abaca)
-				: Math.round(abaca) + 1, // Unidades
+					? Math.round(abaca)
+					: Math.round(abaca) + 1, // Unidades
 		carvao: carv, // Pacotes
 		salGrosso: sal, // Pacotes
 		garfos: garfo, // Unidades
