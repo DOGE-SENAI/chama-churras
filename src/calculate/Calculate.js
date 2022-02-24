@@ -10,7 +10,11 @@ function calcular() {
 	const h = Pessoas.men;
 	const c = Pessoas.kids;
 
-	var [carneTotal, sal, abaca] = [0,0];
+	myObj["Bovina"] = {};
+	myObj["Frango"] = {};
+	myObj["Suina"] = {};
+
+	var [carneTotal, sal, abaca] = [0, 0];
 	var [agua, suco, energe] = [0, 0, 0];
 	var [i51, vodka, tequila, whisky, jurupinga, corote, ice] = [
 		0, 0, 0, 0, 0, 0, 0,
@@ -24,69 +28,60 @@ function calcular() {
 				// carnesM += m * 380;
 				// carnesC += c * 260;
 				carneTotal += h * 460 + m * 380 + c * 260;
-				myObj["contraFile"] = (h * 460 + m * 380 + c * 260) / 100;
+				myObj["Bovina"]["Contra-filé"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 			case "Picanha":
 				carneTotal += h * 460 + m * 380 + c * 260;
-				myObj["picanha"] = (h * 460 + m * 380 + c * 260) / 100;
+				myObj["Bovina"]["Picanha"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 			case "Alcatra":
 				carneTotal += h * 460 + m * 380 + c * 260;
-				myObj["alcatra"] = (h * 460 + m * 380 + c * 260) / 100;
+				myObj["Bovina"]["Alcatra"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 			case "Maminha":
 				carneTotal += h * 460 + m * 380 + c * 260;
-				myObj["maminha"] = (h * 460 + m * 380 + c * 260) / 100;
+				myObj["Bovina"]["Maminha"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 
 			// FRANGO
 			case "Coração":
-				myObj["coracao"] = (h * 460 + m * 380 + c * 260) / 100;
+				myObj["Frango"]["Coração"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 			case "Asinha":
-				myObj["asinha"] = (h * 460 + m * 380 + c * 260) / 100;
+				myObj["Frango"]["Asinha"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 			case "Coxinha":
-				myObj["coxinha"] = (h * 460 + m * 380 + c * 260) / 100;
+				myObj["Frango"]["Coxinha"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 			// SUINA
 			case "Linguiça":
 				// suinaH += h * 160;
 				// suinaM += m * 80;
 				// suinaC += c * 60;
-				myObj["linguica"] = (h * 160 + m * 80 + c * 60) / 100;
+				myObj["Suina"]["Linguica"] = (h * 160 + m * 80 + c * 60) / 100;
 				break;
 			case "Bisteca":
-				myObj["bisteca"] = (h * 600 + m * 460 + c * 200) / 100;
+				myObj["Suina"]["Bisteca"] = (h * 600 + m * 460 + c * 200) / 100;
 				break;
 			case "Costela":
-				myObj["costela"] = (h * 600 + m * 460 + c * 200) / 100;
+				myObj["Suina"]["Costela"] = (h * 600 + m * 460 + c * 200) / 100;
 				break;
 			case "Panceta":
-				myObj["panceta"] = (h * 600 + m * 460 + c * 200) / 100;
+				myObj["Suina"]["Panceta"] = (h * 600 + m * 460 + c * 200) / 100;
 				break;
 
 			// AGUA E SUCO
 			case "Água":
 				agua = (h + m + c) * 200;
-				myObj["agua"] =
-					agua === 0
-						? 0
-						: Math.round(agua / 1000) + 1;
+				myObj["Água"] = agua === 0 ? 0 : Math.round(agua / 1000) + 1;
 				break;
 			case "Sucos":
 				suco = (h + m + c) * 200;
-				myObj["suco"] =
-					suco === 0
-						? 0
-						: Math.round(suco / 1000) + 1
+				myObj["Suco"] = suco === 0 ? 0 : Math.round(suco / 1000) + 1;
 				break;
 			case "Energéticos":
 				energe = (h + m + c) * 200;
-				myObj["energetico"] =
-					energe === 0
-						? 0
-						: Math.round(energe / 1000) + 1;
+				myObj["Energéticos"] = energe === 0 ? 0 : Math.round(energe / 1000) + 1;
 				break;
 
 			// CACHAÇA
@@ -99,12 +94,12 @@ function calcular() {
 				break;
 			case "Vodka":
 				vodka = h * 0.5 + m * 0.25;
-				myObj["vodka"] =
+				myObj["Vodka"] =
 					vodka === 0 ? 0 : Math.round(vodka) === 0 ? 1 : Math.round(vodka);
 				break;
 			case "Tequila":
 				tequila = h * 0.5 + m * 0.25;
-				myObj["tequila"] =
+				myObj["Tequila"] =
 					tequila === 0
 						? 0
 						: Math.round(tequila) === 0
@@ -113,12 +108,12 @@ function calcular() {
 				break;
 			case "whisky":
 				whisky = h * 0.5 + m * 0.25;
-				myObj["whisky"] =
+				myObj["Whisky"] =
 					whisky === 0 ? 0 : Math.round(whisky) === 0 ? 1 : Math.round(whisky);
 				break;
 			case "Jurupinga":
 				jurupinga = h * 0.5 + m * 0.25;
-				myObj["jurupinga"] =
+				myObj["Jurupinga"] =
 					jurupinga === 0
 						? 0
 						: Math.round(jurupinga) === 0
@@ -127,12 +122,12 @@ function calcular() {
 				break;
 			case "Corote":
 				corote = h * 0.5 + m * 0.25;
-				myObj["corote"] =
+				myObj["Corote"] =
 					corote === 0 ? 0 : Math.round(corote) === 0 ? 1 : Math.round(corote);
 				break;
 			case "ICE":
 				ice = h * 0.5 + m * 0.25;
-				myObj["ice"] =
+				myObj["ICE"] =
 					ice === 0 ? 0 : Math.round(ice) === 0 ? 1 : Math.round(ice);
 				break;
 
@@ -140,28 +135,28 @@ function calcular() {
 			case "Skol":
 				// cervH += h * 2;
 				// cervM += m * 1;
-				myObj["skol"] = h * 2 + m * 1;
+				myObj["Skol"] = h * 2 + m * 1;
 				break;
 			case "Brahma":
-				myObj["brahma"] = h * 2 + m * 1;
+				myObj["Brahma"] = h * 2 + m * 1;
 				break;
 			case "Corona":
-				myObj["corona"] = h * 2 + m * 1;
+				myObj["Corona"] = h * 2 + m * 1;
 				break;
 			case "Stella":
-				myObj["stella"] = h * 2 + m * 1;
+				myObj["Stella"] = h * 2 + m * 1;
 				break;
 			case "Itaipava":
-				myObj["itaipava"] = h * 2 + m * 1;
+				myObj["Itaipava"] = h * 2 + m * 1;
 				break;
 			case "Proibida":
-				myObj["proibida"] = h * 2 + m * 1;
+				myObj["Proibida"] = h * 2 + m * 1;
 				break;
 			case "Budweiser":
-				myObj["budweiser"] = h * 2 + m * 1;
+				myObj["Budweiser"] = h * 2 + m * 1;
 				break;
 			case "Heineken":
-				myObj["heineken"] = h * 2 + m * 1;
+				myObj["Heineken"] = h * 2 + m * 1;
 				break;
 
 			// REFRIGERANTE
@@ -169,46 +164,46 @@ function calcular() {
 				// refriH += h * 800;
 				// refriM += m * 800;
 				// refriC += h * 200;
-				myObj["pepsi"] = (h * 800 + m * 800 + c * 200) / 1000;
+				myObj["Pepsi"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 			case "Fanta":
-				myObj["fanta"] = (h * 800 + m * 800 + c * 200) / 1000;
+				myObj["Fanta"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 			case "Dolly":
-				myObj["dolly"] = (h * 800 + m * 800 + c * 200) / 1000;
+				myObj["Dolly"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 			case "Coca-cola":
-				myObj["cocaCola"] = (h * 800 + m * 800 + c * 200) / 1000;
+				myObj["Coca-cola"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 			case "Sprite":
-				myObj["sprite"] = (h * 800 + m * 800 + c * 200) / 1000;
+				myObj["Sprite"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 			case "Tubaína":
-				myObj["tubaina"] = (h * 800 + m * 800 + c * 200) / 1000;
+				myObj["Tubaína"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 
 			// ACOMPANHAMENTOS / VEGET
 			case "Farofa":
-				myObj["farofa"] = (h + m + c) * 40;
+				myObj["Farofa"] = (h + m + c) * 40;
 				break;
 			case "Arroz":
-				myObj["arroz"] = (h + m + c) * 200;
+				myObj["Arroz"] = (h + m + c) * 200;
 				break;
 			case "Vinagrete":
-				myObj["vinagrete"] = (h + m + c) * 100;
+				myObj["Vinagrete"] = (h + m + c) * 100;
 				break;
 			case "Pão de alho":
-				myObj["paoAlho"] = (h + m + c) * 2;
+				myObj["Pão de alho"] = (h + m + c) * 2;
 				break;
 			case "Tomate":
-				myObj["tomate"] = (h + m + c) * 1;
+				myObj["Tomate"] = (h + m + c) * 1;
 				break;
 			case "Tofu":
-				myObj["tofu"] = (h + m + c) * 1;
+				myObj["Tofu"] = (h + m + c) * 1;
 				break;
 			case "Abacaxi":
 				abaca = (h + m + c) * 0.3;
-				myObj["abacaxi"] =
+				myObj["Abacaxi"] =
 					abaca === 0
 						? 0
 						: Math.round(abaca) > abaca
@@ -218,28 +213,28 @@ function calcular() {
 
 			// UTILIDADES
 			case "Garfos":
-				myObj["garfo"] = (h + m + c) * 2;
+				myObj["Garfos"] = (h + m + c) * 2;
 				break;
 			case "Facas":
-				myObj["faca"] = (h + m + c) * 2;
+				myObj["Facas"] = (h + m + c) * 2;
 				break;
 			case "Pratos":
-				myObj["prato"] = (h + m + c) * 2;
+				myObj["Pratos"] = (h + m + c) * 2;
 				break;
 			case "Copos":
-				myObj["copo"] = (h + m + c) * 3;
+				myObj["Copos"] = (h + m + c) * 3;
 				break;
 			case "Guardanapos":
-				myObj["contraFile"] = (h + m + c) * 5;
+				myObj["Guardanapos"] = (h + m + c) * 5;
 				break;
 
 			// OUTROS
 			case "Carvão":
-				myObj["carvao"] = h + m + c > 20 ? 2 : 1;
+				myObj["Carvão"] = h + m + c > 20 ? 2 : 1;
 				break;
 			case "Sal grosso":
 				sal = carneTotal > 30000 ? 3 : 2;
-				myObj["salGrosso"] = sal;
+				myObj["Sal grosso"] = sal;
 				break;
 			default:
 				break;
