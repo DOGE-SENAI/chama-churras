@@ -3,299 +3,301 @@ import { Pessoas } from "../calculate/Persons";
 
 const pessoas = new Pessoas();
 const ingr = new Ingredientes();
+const myObj = {};
 
 function calcular() {
 	const m = Pessoas.woman;
 	const h = Pessoas.men;
 	const c = Pessoas.kids;
 
-	var [carnesH, frangoH, coraH, suinaH, cervH, cachaH, refriH] = [
-		0, 0, 0, 0, 0, 0, 0,
-	];
-	var [carnesM, frangoM, coraM, suinaM, cervM, cachaM, refriM] = [
-		0, 0, 0, 0, 0, 0, 0,
-	];
-	var [carnesC, frangoC, coraC, suinaC, refriC] = [0, 0, 0, 0, 0];
-
+	var [carneTotal, sal, abaca] = [0,0];
 	var [agua, suco, energe] = [0, 0, 0];
-
-	var [carv, sal, guarda, prato, faca, garfo, copo] = [0, 0, 0, 0, 0, 0, 0];
-
-	var [farof, arr, tof, vina, pao, tomat, abaca] = [0, 0, 0, 0, 0, 0, 0];
+	var [i51, vodka, tequila, whisky, jurupinga, corote, ice] = [
+		0, 0, 0, 0, 0, 0, 0,
+	];
 
 	for (var item in Ingredientes.getIngredientes()) {
 		switch (Ingredientes.getIngredientes()[item]) {
 			// BOVINA
 			case "Contra-filé":
-				carnesH += h * 460; // gramas
-				carnesM += m * 380;
-				carnesC += c * 260;
+				// carnesH += h * 460; // gramas
+				// carnesM += m * 380;
+				// carnesC += c * 260;
+				carneTotal += h * 460 + m * 380 + c * 260;
+				myObj["contraFile"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 			case "Picanha":
-				carnesH += h * 460;
-				carnesM += m * 380;
-				carnesC += c * 260;
+				carneTotal += h * 460 + m * 380 + c * 260;
+				myObj["picanha"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 			case "Alcatra":
-				carnesH += h * 460;
-				carnesM += m * 380;
-				carnesC += c * 260;
+				carneTotal += h * 460 + m * 380 + c * 260;
+				myObj["alcatra"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 			case "Maminha":
-				carnesH += h * 460;
-				carnesM += m * 380;
-				carnesC += c * 260;
+				carneTotal += h * 460 + m * 380 + c * 260;
+				myObj["maminha"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 
 			// FRANGO
 			case "Coração":
-				coraH += h * 80;
-				coraM += m * 60;
-				coraC += c * 60;
+				myObj["coracao"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 			case "Asinha":
-				frangoH += h * 420;
-				frangoM += m * 340;
-				frangoC += c * 280;
+				myObj["asinha"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 			case "Coxinha":
-				frangoH += h * 420;
-				frangoM += m * 340;
-				frangoC += c * 280;
+				myObj["coxinha"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
-
 			// SUINA
 			case "Linguiça":
-				suinaH += h * 160;
-				suinaM += m * 80;
-				suinaC += c * 60;
+				// suinaH += h * 160;
+				// suinaM += m * 80;
+				// suinaC += c * 60;
+				myObj["linguica"] = (h * 160 + m * 80 + c * 60) / 100;
 				break;
 			case "Bisteca":
-				suinaH += h * 600;
-				suinaM += m * 460;
-				suinaC += c * 200;
+				myObj["bisteca"] = (h * 600 + m * 460 + c * 200) / 100;
 				break;
 			case "Costela":
-				suinaH += h * 600;
-				suinaM += m * 460;
-				suinaC += c * 200;
+				myObj["costela"] = (h * 600 + m * 460 + c * 200) / 100;
 				break;
 			case "Panceta":
-				suinaH += h * 600;
-				suinaM += m * 460;
-				suinaC += c * 200;
+				myObj["panceta"] = (h * 600 + m * 460 + c * 200) / 100;
 				break;
 
 			// AGUA E SUCO
 			case "Água":
-				agua += (h + m + c) * 200;
+				agua = (h + m + c) * 200;
+				myObj["agua"] =
+					agua === 0
+						? 0
+						: Math.round(agua / 1000) + 1;
 				break;
 			case "Sucos":
-				suco += (h + m + c) * 200;
+				suco = (h + m + c) * 200;
+				myObj["suco"] =
+					suco === 0
+						? 0
+						: Math.round(suco / 1000) + 1
 				break;
 			case "Energéticos":
-				energe += (h + m + c) * 200;
+				energe = (h + m + c) * 200;
+				myObj["energetico"] =
+					energe === 0
+						? 0
+						: Math.round(energe / 1000) + 1;
 				break;
 
 			// CACHAÇA
 			case "51":
-				cachaH += h * 0.5;
-				cachaM += m * 0.25;
+				// cachaH += h * 0.5;
+				// cachaM += m * 0.25;
+				i51 = h * 0.5 + m * 0.25;
+				myObj["51"] =
+					i51 === 0 ? 0 : Math.round(i51) === 0 ? 1 : Math.round(i51);
 				break;
 			case "Vodka":
-				cachaH += h * 0.5;
-				cachaM += m * 0.25;
+				vodka = h * 0.5 + m * 0.25;
+				myObj["vodka"] =
+					vodka === 0 ? 0 : Math.round(vodka) === 0 ? 1 : Math.round(vodka);
 				break;
 			case "Tequila":
-				cachaH += h * 0.5;
-				cachaM += m * 0.25;
+				tequila = h * 0.5 + m * 0.25;
+				myObj["tequila"] =
+					tequila === 0
+						? 0
+						: Math.round(tequila) === 0
+						? 1
+						: Math.round(tequila);
 				break;
 			case "whisky":
-				cachaH += h * 0.5;
-				cachaM += m * 0.25;
+				whisky = h * 0.5 + m * 0.25;
+				myObj["whisky"] =
+					whisky === 0 ? 0 : Math.round(whisky) === 0 ? 1 : Math.round(whisky);
 				break;
 			case "Jurupinga":
-				cachaH += h * 0.5;
-				cachaM += m * 0.25;
+				jurupinga = h * 0.5 + m * 0.25;
+				myObj["jurupinga"] =
+					jurupinga === 0
+						? 0
+						: Math.round(jurupinga) === 0
+						? 1
+						: Math.round(jurupinga);
 				break;
 			case "Corote":
-				cachaH += h * 0.5;
-				cachaM += m * 0.25;
+				corote = h * 0.5 + m * 0.25;
+				myObj["corote"] =
+					corote === 0 ? 0 : Math.round(corote) === 0 ? 1 : Math.round(corote);
 				break;
 			case "ICE":
-				cachaH += h * 0.5;
-				cachaM += m * 0.25;
+				ice = h * 0.5 + m * 0.25;
+				myObj["ice"] =
+					ice === 0 ? 0 : Math.round(ice) === 0 ? 1 : Math.round(ice);
 				break;
 
 			// Cerveja
 			case "Skol":
-				cervH += h * 2;
-				cervM += m * 1;
+				// cervH += h * 2;
+				// cervM += m * 1;
+				myObj["skol"] = h * 2 + m * 1;
 				break;
 			case "Brahma":
-				cervH += h * 2;
-				cervM += m * 1;
+				myObj["brahma"] = h * 2 + m * 1;
 				break;
 			case "Corona":
-				cervH += h * 2;
-				cervM += m * 1;
+				myObj["corona"] = h * 2 + m * 1;
 				break;
 			case "Stella":
-				cervH += h * 2;
-				cervM += m * 1;
+				myObj["stella"] = h * 2 + m * 1;
 				break;
 			case "Itaipava":
-				cervH += h * 2;
-				cervM += m * 1;
+				myObj["itaipava"] = h * 2 + m * 1;
 				break;
 			case "Proibida":
-				cervH += h * 2;
-				cervM += m * 1;
+				myObj["proibida"] = h * 2 + m * 1;
 				break;
 			case "Budweiser":
-				cervH += h * 2;
-				cervM += m * 1;
+				myObj["budweiser"] = h * 2 + m * 1;
 				break;
 			case "Heineken":
-				cervH += h * 2;
-				cervM += m * 1;
+				myObj["heineken"] = h * 2 + m * 1;
 				break;
 
 			// REFRIGERANTE
 			case "Pepsi":
-				refriH += h * 800;
-				refriM += m * 800;
-				refriC += h * 200;
+				// refriH += h * 800;
+				// refriM += m * 800;
+				// refriC += h * 200;
+				myObj["pepsi"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 			case "Fanta":
-				refriH += h * 800;
-				refriM += m * 800;
-				refriC += h * 200;
+				myObj["fanta"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 			case "Dolly":
-				refriH += h * 800;
-				refriM += m * 800;
-				refriC += h * 200;
+				myObj["dolly"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 			case "Coca-cola":
-				refriH += h * 800;
-				refriM += m * 800;
-				refriC += h * 200;
+				myObj["cocaCola"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 			case "Sprite":
-				refriH += h * 800;
-				refriM += m * 800;
-				refriC += h * 200;
+				myObj["sprite"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 			case "Tubaína":
-				refriH += h * 800;
-				refriM += m * 800;
-				refriC += h * 200;
+				myObj["tubaina"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 
 			// ACOMPANHAMENTOS / VEGET
 			case "Farofa":
-				farof = (h + m + c) * 40;
+				myObj["farofa"] = (h + m + c) * 40;
 				break;
 			case "Arroz":
-				arr = (h + m + c) * 200;
+				myObj["arroz"] = (h + m + c) * 200;
 				break;
 			case "Vinagrete":
-				vina = (h + m + c) * 100;
+				myObj["vinagrete"] = (h + m + c) * 100;
 				break;
 			case "Pão de alho":
-				pao = (h + m + c) * 2;
+				myObj["paoAlho"] = (h + m + c) * 2;
 				break;
 			case "Tomate":
-				tomat = (h + m + c) * 1;
+				myObj["tomate"] = (h + m + c) * 1;
 				break;
 			case "Tofu":
-				tof = (h + m + c) * 1;
+				myObj["tofu"] = (h + m + c) * 1;
 				break;
 			case "Abacaxi":
 				abaca = (h + m + c) * 0.3;
+				myObj["abacaxi"] =
+					abaca === 0
+						? 0
+						: Math.round(abaca) > abaca
+						? Math.round(abaca)
+						: Math.round(abaca) + 1;
 				break;
 
 			// UTILIDADES
 			case "Garfos":
-				garfo = (h + m + c) * 2;
+				myObj["garfo"] = (h + m + c) * 2;
 				break;
 			case "Facas":
-				faca = (h + m + c) * 2;
+				myObj["faca"] = (h + m + c) * 2;
 				break;
 			case "Pratos":
-				prato = (h + m + c) * 2;
+				myObj["prato"] = (h + m + c) * 2;
 				break;
 			case "Copos":
-				copo = (h + m + c) * 2;
+				myObj["copo"] = (h + m + c) * 3;
 				break;
 			case "Guardanapos":
-				guarda = (h + m + c) * 5;
+				myObj["contraFile"] = (h + m + c) * 5;
 				break;
 
 			// OUTROS
 			case "Carvão":
-				carv = h + m + c > 10 ? 2 : 1;
+				myObj["carvao"] = h + m + c > 20 ? 2 : 1;
 				break;
 			case "Sal grosso":
-				sal = carnesH + carnesM + carnesC > 30000 ? 3 : 2;
+				sal = carneTotal > 30000 ? 3 : 2;
+				myObj["salGrosso"] = sal;
 				break;
 			default:
 				break;
 		}
 	}
 
-	return {
-		carnes: (carnesH + carnesM + carnesC) / 100, // Kilos
-		frangos: (frangoH + frangoM + frangoC) / 100, // Kilos
-		coracao: (coraH + coraM + coraC) / 100, // Kilos
-		suina: (suinaH + suinaM + suinaC) / 100, //Kilos
-		aguas:
-			agua === 0
-				? 0
-				: agua / 1000 >= 1.5
-				? Math.round(agua / 1000)
-				: Math.round(agua / 1000) + 1, // Garrafas
-		sucos:
-			suco === 0
-				? 0
-				: suco / 1000 >= 1.5
-				? Math.round(suco / 1000)
-				: Math.round(suco / 1000) + 1, // Garrafas
-		energeticos:
-			energe === 0
-				? 0
-				: energe / 1000 >= 1.5
-				? Math.round(energe / 1000)
-				: Math.round(energe / 1000) + 1, // Garrafas
-		cachaca:
-			cachaH + cachaM === 0
-				? 0
-				: Math.round(cachaH + cachaM) === 0
-				? 1
-				: Math.round(cachaH + cachaM), //Garrafas
-		cerveja: cervH + cervM, // Litros
-		refrigerante: (refriH + refriM + refriC) / 1000, // Garrafas
-		farofa: farof / 1000, // Kilos
-		arroz: arr / 1000, // Kilos
-		vinagrete: vina > 1000 ? vina / 1000 : vina / 100, // Gramas
-		paoAlho: pao, // Unidades
-		tomate: tomat, // Unidades
-		tofu: tof, // Unidades
-		abacaxi:
-			abaca === 0
-				? 0
-				: Math.round(abaca) > abaca
-				? Math.round(abaca)
-				: Math.round(abaca) + 1, // Unidades
-		carvao: carv, // Pacotes
-		salGrosso: sal, // Pacotes
-		garfos: garfo, // Unidades
-		facas: faca, // Unidades
-		pratos: prato, // Unidades
-		copos: copo, // Unidades
-		guardanapos: guarda, // Unidades
-	};
+	return myObj;
+	// return {
+	// 	carnes: (carnesH + carnesM + carnesC) / 100, // Kilos
+	// 	frangos: (frangoH + frangoM + frangoC) / 100, // Kilos
+	// 	coracao: (coraH + coraM + coraC) / 100, // Kilos
+	// 	suina: (suinaH + suinaM + suinaC) / 100, //Kilos
+	// 	aguas:
+	// 		agua === 0
+	// 			? 0
+	// 			: agua / 1000 >= 1.5
+	// 				? Math.round(agua / 1000)
+	// 				: Math.round(agua / 1000) + 1, // Garrafas
+	// 	sucos:
+	// 		suco === 0
+	// 			? 0
+	// 			: suco / 1000 >= 1.5
+	// 				? Math.round(suco / 1000)
+	// 				: Math.round(suco / 1000) + 1, // Garrafas
+	// 	energeticos:
+	// 		energe === 0
+	// 			? 0
+	// 			: energe / 1000 >= 1.5
+	// 				? Math.round(energe / 1000)
+	// 				: Math.round(energe / 1000) + 1, // Garrafas
+	// 	cachaca:
+	// 		cachaH + cachaM === 0
+	// 			? 0
+	// 			: Math.round(cachaH + cachaM) === 0
+	// 				? 1
+	// 				: Math.round(cachaH + cachaM), //Garrafas
+	// 	cerveja: cervH + cervM, // Litros
+	// 	refrigerante: (refriH + refriM + refriC) / 1000, // Garrafas
+	// 	farofa: farof / 1000, // Kilos
+	// 	arroz: arr / 1000, // Kilos
+	// 	vinagrete: vina > 1000 ? vina / 1000 : vina / 100, // Gramas
+	// 	paoAlho: pao, // Unidades
+	// 	tomate: tomat, // Unidades
+	// 	tofu: tof, // Unidades
+	// 	abacaxi:
+	// 		abaca === 0
+	// 			? 0
+	// 			: Math.round(abaca) > abaca
+	// 				? Math.round(abaca)
+	// 				: Math.round(abaca) + 1, // Unidades
+	// 	carvao: carv, // Pacotes
+	// 	salGrosso: sal, // Pacotes
+	// 	garfos: garfo, // Unidades
+	// 	facas: faca, // Unidades
+	// 	pratos: prato, // Unidades
+	// 	copos: copo, // Unidades
+	// 	guardanapos: guarda, // Unidades
+	// };
 }
 
 module.exports = { calcular };

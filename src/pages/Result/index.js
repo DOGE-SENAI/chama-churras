@@ -10,16 +10,16 @@ import { shareAsync } from "expo-sharing";
 import * as Print from "expo-print";
 import Header from "../../components/Header";
 import FriendsIllutration from "../../assets/images/friends.svg";
+
 import { calcular } from "../../calculate/Calculate";
 import { Pessoas } from "../../calculate/Persons";
 
-const totalPessoas = Pessoas.men + Pessoas.woman + Pessoas.kids;
-
 const Result = () => {
 	const pessoas = new Pessoas();
+	var myObj = calcular();
 
-	const print = async () => {
-		await Print.printAsync({ html });
+	const print = () => {
+		console.log(myObj);
 	};
 
 	const printToFile = async () => {
@@ -267,7 +267,7 @@ const html = `
 					</tr>
 					<tr class="total">
 						<th>Total</th>
-						<td>${totalPessoas}</td>
+						<td>${Pessoas.getPersons()}</td>
 					</tr>
 				</table>
 

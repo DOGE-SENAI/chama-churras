@@ -5,6 +5,10 @@ class Pessoas {
 	static men = 0;
 	static kids = 0;
 
+	static getPersons() {
+		return this.woman + this.men + this.kids;
+	}
+
 	static setWoman(value) {
 		this.woman = value;
 	}
