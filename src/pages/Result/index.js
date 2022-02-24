@@ -10,8 +10,14 @@ import { shareAsync } from "expo-sharing";
 import * as Print from "expo-print";
 import Header from "../../components/Header";
 import FriendsIllutration from "../../assets/images/friends.svg";
+import { calcular } from "../../calculate/Calculate";
+import { Pessoas } from "../../calculate/Persons";
+
+const totalPessoas = Pessoas.men + Pessoas.woman + Pessoas.kids;
 
 const Result = () => {
+	const pessoas = new Pessoas();
+
 	const print = async () => {
 		await Print.printAsync({ html });
 	};
@@ -41,7 +47,7 @@ const Result = () => {
 					</View>
 
 					<View style={styles.containerBtn}>
-						<TouchableOpacity style={styles.btn} onPress={printToFile}>
+						<TouchableOpacity style={styles.btn} onPress={print}>
 							<Text style={styles.btnText}>Compartilhar Resultado</Text>
 						</TouchableOpacity>
 
@@ -249,19 +255,19 @@ const html = `
 					</tr>
 					<tr>
 						<th>Homens</th>
-						<td>6</td>
+						<td>${Pessoas.men}</td>
 					</tr>
 					<tr>
 						<th>Mulheres</th>
-						<td>7</td>
+						<td>${Pessoas.woman}</td>
 					</tr>
 					<tr>
 						<th>Crianças</th>
-						<td>3</td>
+						<td>${Pessoas.kids}</td>
 					</tr>
 					<tr class="total">
 						<th>Total</th>
-						<td>16</td>
+						<td>${totalPessoas}</td>
 					</tr>
 				</table>
 

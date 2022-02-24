@@ -8,10 +8,6 @@ import { Pessoas } from "../../calculate/Persons";
 const Persons = () => {
 	const pessoas = new Pessoas();
 
-	const [male, setMale] = React.useState(null);
-	const [female, setFemale] = React.useState(null);
-	const [children, setChildren] = React.useState(null);
-
 	return (
 		<ScrollView style={styles.scrollContainer}>
 			<Header page="Home" />
@@ -23,11 +19,9 @@ const Persons = () => {
 				<SafeAreaView>
 					<TextInput
 						style={styles.input}
-						onChangeText={() => {
-							setMale;
-							Pessoas.setMen(Number.parseInt(male));
+						onChangeText={(e) => {
+							Pessoas.setMen(parseInt(e));
 						}}
-						value={male}
 						keyboardType="numeric"
 					></TextInput>
 				</SafeAreaView>
@@ -36,11 +30,9 @@ const Persons = () => {
 				<SafeAreaView>
 					<TextInput
 						style={styles.input}
-						onChangeText={() => {
-							setFemale;
-							Pessoas.setWoman(Number.parseInt(female));
+						onChangeText={(e) => {
+							Pessoas.setWoman(parseInt(e));
 						}}
-						value={female}
 						keyboardType="numeric"
 					></TextInput>
 				</SafeAreaView>
@@ -49,11 +41,9 @@ const Persons = () => {
 				<SafeAreaView>
 					<TextInput
 						style={styles.input}
-						onChangeText={() => {
-							setChildren;
-							Pessoas.setKids(Number.parseInt(children));
+						onChangeText={(e) => {
+							Pessoas.setKids(parseInt(e));
 						}}
-						value={children}
 						keyboardType="numeric"
 					></TextInput>
 				</SafeAreaView>

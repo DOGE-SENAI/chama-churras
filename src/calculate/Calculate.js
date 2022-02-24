@@ -1,6 +1,9 @@
 import { Ingredientes } from "../calculate/Ingredients";
 import { Pessoas } from "../calculate/Persons";
 
+const pessoas = new Pessoas();
+const ingr = new Ingredientes();
+
 function calcular() {
 	const m = Pessoas.woman;
 	const h = Pessoas.men;
@@ -21,7 +24,7 @@ function calcular() {
 	var [farof, arr, tof, vina, pao, tomat, abaca] = [0, 0, 0, 0, 0, 0, 0];
 
 	for (var item in Ingredientes.getIngredientes()) {
-		switch (item) {
+		switch (Ingredientes.getIngredientes()[item]) {
 			// BOVINA
 			case "Contra-filé":
 				carnesH += h * 460; // gramas
@@ -43,6 +46,7 @@ function calcular() {
 				carnesM += m * 380;
 				carnesC += c * 260;
 				break;
+
 			// FRANGO
 			case "Coração":
 				coraH += h * 80;
@@ -59,6 +63,7 @@ function calcular() {
 				frangoM += m * 340;
 				frangoC += c * 280;
 				break;
+
 			// SUINA
 			case "Linguiça":
 				suinaH += h * 160;
@@ -80,6 +85,7 @@ function calcular() {
 				suinaM += m * 460;
 				suinaC += c * 200;
 				break;
+
 			// AGUA E SUCO
 			case "Água":
 				agua += (h + m + c) * 200;
@@ -90,6 +96,7 @@ function calcular() {
 			case "Energéticos":
 				energe += (h + m + c) * 200;
 				break;
+
 			// CACHAÇA
 			case "51":
 				cachaH += h * 0.5;
@@ -119,6 +126,7 @@ function calcular() {
 				cachaH += h * 0.5;
 				cachaM += m * 0.25;
 				break;
+
 			// Cerveja
 			case "Skol":
 				cervH += h * 2;
@@ -152,6 +160,7 @@ function calcular() {
 				cervH += h * 2;
 				cervM += m * 1;
 				break;
+
 			// REFRIGERANTE
 			case "Pepsi":
 				refriH += h * 800;
@@ -183,6 +192,7 @@ function calcular() {
 				refriM += m * 800;
 				refriC += h * 200;
 				break;
+
 			// ACOMPANHAMENTOS / VEGET
 			case "Farofa":
 				farof = (h + m + c) * 40;
@@ -205,6 +215,7 @@ function calcular() {
 			case "Abacaxi":
 				abaca = (h + m + c) * 0.3;
 				break;
+
 			// UTILIDADES
 			case "Garfos":
 				garfo = (h + m + c) * 2;
@@ -221,6 +232,7 @@ function calcular() {
 			case "Guardanapos":
 				guarda = (h + m + c) * 5;
 				break;
+
 			// OUTROS
 			case "Carvão":
 				carv = h + m + c > 10 ? 2 : 1;
@@ -242,28 +254,27 @@ function calcular() {
 			agua === 0
 				? 0
 				: agua / 1000 >= 1.5
-					? Math.round(agua / 1000)
-					: Math.round(agua / 1000) + 1, // Garrafas
+				? Math.round(agua / 1000)
+				: Math.round(agua / 1000) + 1, // Garrafas
 		sucos:
 			suco === 0
 				? 0
 				: suco / 1000 >= 1.5
-					? Math.round(suco / 1000)
-					: Math.round(suco / 1000) + 1, // Garrafas
+				? Math.round(suco / 1000)
+				: Math.round(suco / 1000) + 1, // Garrafas
 		energeticos:
 			energe === 0
 				? 0
 				: energe / 1000 >= 1.5
-					? Math.round(energe / 1000)
-					: Math.round(energe / 1000) + 1, // Garrafas
+				? Math.round(energe / 1000)
+				: Math.round(energe / 1000) + 1, // Garrafas
 		cachaca:
-			((cachaH + cachaM) === 0)
+			cachaH + cachaM === 0
 				? 0
-				:
-				Math.round((cachaH + cachaM)) === 0
-					? 1
-					: Math.round((cachaH + cachaM)), //Garrafas
-		cerveja: (cervH + cervM), // Litros
+				: Math.round(cachaH + cachaM) === 0
+				? 1
+				: Math.round(cachaH + cachaM), //Garrafas
+		cerveja: cervH + cervM, // Litros
 		refrigerante: (refriH + refriM + refriC) / 1000, // Garrafas
 		farofa: farof / 1000, // Kilos
 		arroz: arr / 1000, // Kilos
@@ -275,8 +286,8 @@ function calcular() {
 			abaca === 0
 				? 0
 				: Math.round(abaca) > abaca
-					? Math.round(abaca)
-					: Math.round(abaca) + 1, // Unidades
+				? Math.round(abaca)
+				: Math.round(abaca) + 1, // Unidades
 		carvao: carv, // Pacotes
 		salGrosso: sal, // Pacotes
 		garfos: garfo, // Unidades
