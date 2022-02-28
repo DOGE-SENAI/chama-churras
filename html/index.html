@@ -152,38 +152,43 @@
 					<tr class="head-table">
 						<th>Carnes</th>
 						<th>Tipos</th>
+						<th>Kg</th>
 					</tr>
 
 					<!-- Bovina -->
-					<tr>
+					<tr class="bovina">
 						<th rowspan="4" class="header">Bovina</th>
 						<td>Contra-filé</td>
+						<td>0 kg</td>
 					</tr>
-					<tr>
+					<tr class="bovina">
 						<td>Picanha</td>
+						<td>0 kg</td>
 					</tr>
-					<tr>
+					<tr class="bovina">
 						<td>Alcatra</td>
+						<td>0 kg</td>
 					</tr>
-					<tr class="last">
+					<tr class="bovina last">
 						<td>Maminha</td>
+						<td>0 kg</td>
 					</tr>
 
 					<!-- Frango -->
-					<tr>
-						<th rowspan="3" class="header">Frango</th>
+					<tr class="frango">
+						<th rowspan="3" class="header" id="frango">Frango</th>
 						<td>Coração</td>
 					</tr>
-					<tr>
+					<tr class="frango">
 						<td>Asinha</td>
 					</tr>
-					<tr class="last">
+					<tr class="frango last">
 						<td>Coxinha</td>
 					</tr>
 
 					<!-- Suína -->
 					<tr>
-						<th rowspan="4" class="header">Suína</th>
+						<th rowspan="4" class="header" id="suina">Suína</th>
 						<td>Bisteca</td>
 					</tr>
 					<tr>
@@ -343,5 +348,42 @@
 
 			<footer>Chama Churras - Equipe DOGE</footer>
 		</main>
+
+		<script>
+			myObj = {
+				Bovina: {
+					Alcatra: 61.2,
+					ContraFile: 61.2,
+					Maminha: 61.2,
+					Picanha: 61.2,
+				},
+				Frango: {
+					Asinha: 61.2,
+					Coração: 61.2,
+					Coxinha: 61.2,
+				},
+				Suina: {
+					Bisteca: 72.8,
+					Costela: 72.8,
+					Linguica: 16.2,
+					Panceta: 72.8,
+				},
+			};
+
+			let bovinaTr = document.getElementsByClassName("bovina");
+
+			if (!myObj.Bovina) {
+				for (var i = 0; i < bovinaTr.length; i++) {
+					bovinaTr[i].style.display = "none";
+				}
+			} else {
+				const picanha = myObj.Bovina.Picanha || 0;
+				const alcatra = myObj.Bovina.Alcatra || 0;
+				const maminha = myObj.Bovina.Maminha || 0;
+				const contraFile = myObj.Bovina.ContraFile || 0;
+
+				console.log(picanha, alcatra, maminha, contraFile);
+			}
+		</script>
 	</body>
 </html>

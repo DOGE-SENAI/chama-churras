@@ -14,12 +14,13 @@ import FriendsIllutration from "../../assets/images/friends.svg";
 import { calcular } from "../../calculate/Calculate";
 import { Pessoas } from "../../calculate/Persons";
 
+var myObj = calcular();
+
 const Result = () => {
 	const pessoas = new Pessoas();
-	var myObj = calcular();
 
 	const print = () => {
-		console.log(myObj);
+		console.log(html);
 	};
 
 	const printToFile = async () => {
@@ -47,7 +48,7 @@ const Result = () => {
 					</View>
 
 					<View style={styles.containerBtn}>
-						<TouchableOpacity style={styles.btn} onPress={print}>
+						<TouchableOpacity style={styles.btn} onPress={printToFile}>
 							<Text style={styles.btnText}>Compartilhar Resultado</Text>
 						</TouchableOpacity>
 
@@ -276,48 +277,60 @@ const html = `
 					<tr class="head-table">
 						<th>Carnes</th>
 						<th>Tipos</th>
+						<th>Kg</th>
 					</tr>
 
 					<!-- Bovina -->
-					<tr>
+					<tr class="bovina">
 						<th rowspan="4" class="header">Bovina</th>
 						<td>Contra-filé</td>
+						<td>${myObj.Bovina.ContraFile || 0} kg</td>
 					</tr>
-					<tr>
+					<tr class="bovina">
 						<td>Picanha</td>
+						<td>${myObj.Bovina.Picanha || 0} kg</td>
 					</tr>
-					<tr>
+					<tr class="bovina">
 						<td>Alcatra</td>
+						<td>${myObj.Bovina.Alcatra || 0} kg</td>
 					</tr>
-					<tr class="last">
+					<tr class="bovina last">
 						<td>Maminha</td>
+						<td>${myObj.Bovina.Maminha || 0} kg</td>
 					</tr>
 
 					<!-- Frango -->
 					<tr>
 						<th rowspan="3" class="header">Frango</th>
 						<td>Coração</td>
+						<td>${myObj.Frango.Coração || 0} kg</td>
 					</tr>
 					<tr>
 						<td>Asinha</td>
+						<td>${myObj.Frango.Asinha || 0} kg</td>
 					</tr>
 					<tr class="last">
 						<td>Coxinha</td>
+						<td>${myObj.Frango.Coxinha || 0} kg</td>
 					</tr>
 
 					<!-- Suína -->
 					<tr>
 						<th rowspan="4" class="header">Suína</th>
 						<td>Bisteca</td>
+						<td>${myObj.Suina.Bisteca || 0} kg</td>
 					</tr>
 					<tr>
 						<td>Linguiça</td>
+						<td>${myObj.Suina.Linguica || 0} kg</td>
 					</tr>
 					<tr>
 						<td>Costela</td>
+						<td>${myObj.Suina.Costela || 0} kg</td>
 					</tr>
 					<tr class="last">
 						<td>Panceta</td>
+						<td>${myObj.Suina.Panceta || 0} kg</td>
 					</tr>
 				</table>
 
@@ -467,6 +480,15 @@ const html = `
 
 			<footer>Chama Churras - Equipe DOGE</footer>
 		</main>
+		<script>
+			let bovinaTr = document.getElementsByClassName("bovina");
+			console.log(bovinaTr);
+			if (!myObj.Bovina) {
+				for (var i = 0; i < bovinaTr.length; i++) {
+					bovinaTr[i].style.display = "none";
+				}
+			}
+		</script>
 	</body>
 </html>
 `;

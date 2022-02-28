@@ -28,7 +28,7 @@ function calcular() {
 				// carnesM += m * 380;
 				// carnesC += c * 260;
 				carneTotal += h * 460 + m * 380 + c * 260;
-				myObj["Bovina"]["Contra-filé"] = (h * 460 + m * 380 + c * 260) / 100;
+				myObj["Bovina"]["ContraFile"] = (h * 460 + m * 380 + c * 260) / 100;
 				break;
 			case "Picanha":
 				carneTotal += h * 460 + m * 380 + c * 260;
