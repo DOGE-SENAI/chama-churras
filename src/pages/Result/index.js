@@ -30,6 +30,8 @@ const Result = () => {
 		console.log("File has been saved to:", uri);
 		await shareAsync(uri, { UTI: ".pdf", mimeType: "application/pdf" });
 	};
+	console.log(myObj);
+	console.log(Pessoas);
 
 	return (
 		<ScrollView style={styles.scrollContainer}>
@@ -346,88 +348,108 @@ const html = `
 					<tr>
 						<th rowspan="3" class="header">água / suco</th>
 						<td>água</td>
-						<td>20</td>
+						<td>${myObj.Água || 0} garrafas</td>
 					</tr>
 					<tr>
 						<td>suco</td>
-						<td>10</td>
+						<td>${myObj.Suco || 0} garrafas</td>
 					</tr>
 					<tr class="last">
 						<td>energéticos</td>
-						<td>20</td>
+						<td>${myObj.Energéticos || 0} garrafas</td>
 					</tr>
 
 					<!-- Cervejas -->
 					<tr>
 						<th rowspan="4" class="header">Cerveja</th>
 						<td>Brahma</td>
-						<td>20</td>
+						<td>${myObj.Brahma || 0} latas</td>
 					</tr>
 					<tr>
 						<td>Skol</td>
-						<td>20</td>
+						<td>${myObj.Skol || 0} latas</td>
 					</tr>
 					<tr>
 						<td>Corona</td>
-						<td>20</td>
+						<td>${myObj.Corona || 0} latas</td>
 					</tr>
 					<tr class="last">
 						<td>Stella</td>
-						<td>20</td>
+						<td>${myObj.Stella || 0} latas</td>
+					</tr>
+					<tr class="last">
+						<td>Itaipava</td>
+						<td>${myObj.Itaipava || 0} latas</td>
+					</tr>
+					<tr class="last">
+						<td>Proibida</td>
+						<td>${myObj.Proibida || 0} latas</td>
+					</tr>
+					<tr class="last">
+						<td>Budweiser</td>
+						<td>${myObj.Budweiser || 0} latas</td>
+					</tr>
+					<tr class="last">
+						<td>Heineken</td>
+						<td>${myObj.Heineken || 0} latas</td>
 					</tr>
 
 					<!-- Cachaças -->
 					<tr>
 						<th rowspan="5" class="header">Cachaça</th>
 						<td>51</td>
-						<td>20</td>
+						<td>${myObj.i51 || 0} garrafas</td>
 					</tr>
 					<tr>
 						<td>Vodka</td>
-						<td>20</td>
+						<td>${myObj.Vodka || 0} garrafas</td>
 					</tr>
 					<tr>
 						<td>Tequila</td>
-						<td>20</td>
+						<td>${myObj.Tequila || 0} garrafas</td>
 					</tr>
 					<tr>
 						<td>Whisky</td>
-						<td>20</td>
+						<td>${myObj.Whisky || 0} garrafas</td>
+					</tr>
+					<tr>
+						<td>Jurupinga</td>
+						<td>${myObj.Jurupinga || 0} garrafas</td>
+					</tr>
+					<tr>
+						<td>ICE</td>
+						<td>${myObj.Ice || 0} garrafas</td>
 					</tr>
 					<tr class="last">
 						<td>Corote</td>
-						<td>20</td>
+						<td>${myObj.Corote || 0} garrafas</td>
 					</tr>
 
 					<!-- Refrigerante -->
 					<tr>
 						<th rowspan="7" class="header">Refrigerante</th>
 						<td>Pepsi</td>
-						<td>20</td>
+						<td>${myObj.Pepsi || 0} garrafas</td>
 					</tr>
 					<tr>
 						<td>Fanta</td>
-						<td>20</td>
+						<td>${myObj.Fanta || 0} garrafas</td>
 					</tr>
 					<tr>
 						<td>Dolly</td>
-						<td>20</td>
+						<td>${myObj.Dolly || 0} garrafas</td>
 					</tr>
 					<tr>
 						<td>Coca-cola</td>
-						<td>20</td>
-					</tr>
-					<tr>
-						<td>Guaraná</td>
-						<td>20</td>
+						<td>${myObj.CocaCola || 0} garrafas</td>
 					</tr>
 					<tr>
 						<td>Sprite</td>
-						<td>20</td>
+						<td>${myObj.Sprite || 0} garrafas</td>
 					</tr>
 					<tr class="last">
 						<td>Tubaína</td>
-						<td>20</td>
+						<td>${myObj.Tubaína || 0} garrafas</td>
 					</tr>
 				</table>
 
@@ -440,19 +462,19 @@ const html = `
 
 					<tr>
 						<td>Farofa</td>
-						<td>12 kg</td>
+						<td>${myObj.Farofa || 0} kg</td>
 					</tr>
 					<tr>
 						<td>Arroz</td>
-						<td>12 kg</td>
+						<td>${myObj.Arroz || 0} kg</td>
 					</tr>
 					<tr>
 						<td>Vinagrete</td>
-						<td>12 g</td>
+						<td>${myObj.Vinagrete || 0} g</td>
 					</tr>
 					<tr>
 						<td>Pão de Alho</td>
-						<td>12</td>
+						<td>${myObj.PãoDeAlho || 0}</td>
 					</tr>
 				</table>
 
@@ -465,17 +487,19 @@ const html = `
 
 					<tr>
 						<td>Tomate</td>
-						<td>32</td>
+						<td>${myObj.Tomate || 0}</td>
 					</tr>
 					<tr>
 						<td>Tofu</td>
-						<td>32</td>
+						<td>${myObj.Tofu || 0}</td>
 					</tr>
 					<tr>
 						<td>Abacaxi</td>
-						<td>32</td>
+						<td>${myObj.Abacaxi || 0}</td>
 					</tr>
 				</table>
+
+				<!-- Falta Utilitários e Outros-->
 			</div>
 
 			<footer>Chama Churras - Equipe DOGE</footer>

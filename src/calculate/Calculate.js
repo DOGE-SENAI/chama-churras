@@ -89,7 +89,7 @@ function calcular() {
 				// cachaH += h * 0.5;
 				// cachaM += m * 0.25;
 				i51 = h * 0.5 + m * 0.25;
-				myObj["51"] =
+				myObj["i51"] =
 					i51 === 0 ? 0 : Math.round(i51) === 0 ? 1 : Math.round(i51);
 				break;
 			case "Vodka":
@@ -127,7 +127,7 @@ function calcular() {
 				break;
 			case "ICE":
 				ice = h * 0.5 + m * 0.25;
-				myObj["ICE"] =
+				myObj["Ice"] =
 					ice === 0 ? 0 : Math.round(ice) === 0 ? 1 : Math.round(ice);
 				break;
 
@@ -173,7 +173,7 @@ function calcular() {
 				myObj["Dolly"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 			case "Coca-cola":
-				myObj["Coca-cola"] = (h * 800 + m * 800 + c * 200) / 1000;
+				myObj["CocaCola"] = (h * 800 + m * 800 + c * 200) / 1000;
 				break;
 			case "Sprite":
 				myObj["Sprite"] = (h * 800 + m * 800 + c * 200) / 1000;
@@ -193,7 +193,7 @@ function calcular() {
 				myObj["Vinagrete"] = (h + m + c) * 100;
 				break;
 			case "Pão de alho":
-				myObj["Pão de alho"] = (h + m + c) * 2;
+				myObj["PãoDeAlho"] = (h + m + c) * 2;
 				break;
 			case "Tomate":
 				myObj["Tomate"] = (h + m + c) * 1;
