@@ -1,9 +1,9 @@
 import {
-	StyleSheet,
-	View,
-	Text,
-	ScrollView,
-	TouchableOpacity,
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import { shareAsync } from "expo-sharing";
@@ -14,117 +14,18 @@ import FriendsIllutration from "../../assets/images/friends.svg";
 import { calcular } from "../../calculate/Calculate";
 import { Pessoas } from "../../calculate/Persons";
 
-var myObj = calcular();
-
 const Result = () => {
-	const pessoas = new Pessoas();
+  const pessoas = new Pessoas();
+  calcular();
+  const myObj = calcular();
 
-	const print = () => {
-		console.log(html);
-	};
+  //   const print = () => {
+  //     // console.log(html);
+  //     console.log(myObj);
+  //     console.log(Pessoas);
+  //   };
 
-	const printToFile = async () => {
-		const { uri } = await Print.printToFileAsync({
-			html,
-		});
-		console.log("File has been saved to:", uri);
-		await shareAsync(uri, { UTI: ".pdf", mimeType: "application/pdf" });
-	};
-	console.log(myObj);
-	console.log(Pessoas);
-
-	return (
-		<ScrollView style={styles.scrollContainer}>
-			<Header page="Options" />
-
-			<View style={styles.containerMain}>
-				<Text style={styles.title}>Resultado</Text>
-
-				<View style={styles.content}>
-					<Text style={styles.textContent}>
-						Churrasco calculado! Tenha um bom churrasco.
-					</Text>
-
-					<View style={styles.imageFriends}>
-						<FriendsIllutration />
-					</View>
-
-					<View style={styles.containerBtn}>
-						<TouchableOpacity style={styles.btn} onPress={printToFile}>
-							<Text style={styles.btnText}>Compartilhar Resultado</Text>
-						</TouchableOpacity>
-
-						<Text style={styles.legendBtn}>
-							Para obter o resultado você precisa clicar em "Compartilhar" e
-							salvar o PDF. Você também pode compartilhá-lo em outras
-							plataformas.
-						</Text>
-					</View>
-				</View>
-			</View>
-		</ScrollView>
-	);
-};
-
-const styles = StyleSheet.create({
-	title: {
-		alignItems: "center",
-		marginTop: 50,
-		fontSize: 20,
-		fontWeight: "bold",
-	},
-	containerMain: {
-		flex: 1,
-		backgroundColor: "#E6E8E1",
-		alignItems: "center",
-		width: "100%",
-	},
-	content: {
-		marginTop: 30,
-		alignItems: "center",
-	},
-	textContent: {
-		fontSize: 20,
-		margin: 16,
-		textAlign: "center",
-		fontWeight: "700",
-	},
-	imageFriends: {
-		alignItems: "center",
-		justifyContent: "center",
-	},
-
-	containerBtn: {
-		margin: 20,
-		justifyContent: "center",
-		alignItems: "center",
-	},
-	btn: {
-		borderRadius: 50,
-		height: 60,
-		width: 260,
-		marginBottom: 10,
-		alignItems: "center",
-		justifyContent: "center",
-		backgroundColor: "#833116",
-	},
-	btnText: {
-		fontSize: 20,
-		color: "#fafafa",
-		textAlign: "center",
-	},
-	legendBtn: {
-		textAlign: "center",
-		fontSize: 16,
-		fontWeight: "400",
-	},
-
-	scrollContainer: {
-		backgroundColor: "#E6E8E1",
-	},
-});
-
-const html = `
+  const html = `
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -549,17 +450,107 @@ const html = `
 
 			<footer>Chama Churras - Equipe DOGE</footer>
 		</main>
-		<script>
-			let bovinaTr = document.getElementsByClassName("bovina");
-			console.log(bovinaTr);
-			if (!myObj.Bovina) {
-				for (var i = 0; i < bovinaTr.length; i++) {
-					bovinaTr[i].style.display = "none";
-				}
-			}
-		</script>
 	</body>
 </html>
 `;
+
+  const printToFile = async () => {
+    const { uri } = await Print.printToFileAsync({
+      html,
+    });
+    console.log("File has been saved to:", uri);
+    await shareAsync(uri, { UTI: ".pdf", mimeType: "application/pdf" });
+  };
+
+  return (
+    <ScrollView style={styles.scrollContainer}>
+      <Header page="Options" />
+
+      <View style={styles.containerMain}>
+        <Text style={styles.title}>Resultado</Text>
+
+        <View style={styles.content}>
+          <Text style={styles.textContent}>
+            Churrasco calculado! Tenha um bom churrasco.
+          </Text>
+
+          <View style={styles.imageFriends}>
+            <FriendsIllutration />
+          </View>
+
+          <View style={styles.containerBtn}>
+            <TouchableOpacity style={styles.btn} onPress={printToFile}>
+              <Text style={styles.btnText}>Compartilhar Resultado</Text>
+            </TouchableOpacity>
+
+            <Text style={styles.legendBtn}>
+              Para obter o resultado você precisa clicar em "Compartilhar" e
+              salvar o PDF. Você também pode compartilhá-lo em outras
+              plataformas.
+            </Text>
+          </View>
+        </View>
+      </View>
+    </ScrollView>
+  );
+};
+
+const styles = StyleSheet.create({
+  title: {
+    alignItems: "center",
+    marginTop: 50,
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  containerMain: {
+    flex: 1,
+    backgroundColor: "#E6E8E1",
+    alignItems: "center",
+    width: "100%",
+  },
+  content: {
+    marginTop: 30,
+    alignItems: "center",
+  },
+  textContent: {
+    fontSize: 20,
+    margin: 16,
+    textAlign: "center",
+    fontWeight: "700",
+  },
+  imageFriends: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  containerBtn: {
+    margin: 20,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  btn: {
+    borderRadius: 50,
+    height: 60,
+    width: 260,
+    marginBottom: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#833116",
+  },
+  btnText: {
+    fontSize: 20,
+    color: "#fafafa",
+    textAlign: "center",
+  },
+  legendBtn: {
+    textAlign: "center",
+    fontSize: 16,
+    fontWeight: "400",
+  },
+
+  scrollContainer: {
+    backgroundColor: "#E6E8E1",
+  },
+});
 
 export default Result;
