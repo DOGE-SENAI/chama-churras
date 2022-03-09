@@ -361,7 +361,7 @@ const html = `
 
 					<!-- Cervejas -->
 					<tr>
-						<th rowspan="4" class="header">Cerveja</th>
+						<th rowspan="8" class="header">Cerveja</th>
 						<td>Brahma</td>
 						<td>${myObj.Brahma || 0} latas</td>
 					</tr>
@@ -373,19 +373,19 @@ const html = `
 						<td>Corona</td>
 						<td>${myObj.Corona || 0} latas</td>
 					</tr>
-					<tr class="last">
+					<tr>
 						<td>Stella</td>
 						<td>${myObj.Stella || 0} latas</td>
 					</tr>
-					<tr class="last">
+					<tr>
 						<td>Itaipava</td>
 						<td>${myObj.Itaipava || 0} latas</td>
 					</tr>
-					<tr class="last">
+					<tr>
 						<td>Proibida</td>
 						<td>${myObj.Proibida || 0} latas</td>
 					</tr>
-					<tr class="last">
+					<tr>
 						<td>Budweiser</td>
 						<td>${myObj.Budweiser || 0} latas</td>
 					</tr>
@@ -396,7 +396,7 @@ const html = `
 
 					<!-- Cachaças -->
 					<tr>
-						<th rowspan="5" class="header">Cachaça</th>
+						<th rowspan="7" class="header">Cachaça</th>
 						<td>51</td>
 						<td>${myObj.i51 || 0} garrafas</td>
 					</tr>
@@ -500,6 +500,51 @@ const html = `
 				</table>
 
 				<!-- Falta Utilitários e Outros-->
+				<h2>Utilitários</h2>
+				<table>
+					<tr class="head-table">
+						<th>Items</th>
+						<th>Quatidade</th>
+					</tr>
+
+					<tr>
+						<td>Garfos</td>
+						<td>${myObj.Garfos || 0}</td>
+					</tr>
+					<tr>
+						<td>Facas</td>
+						<td>${myObj.Facas || 0}</td>
+					</tr>
+					<tr>
+						<td>Pratos</td>
+						<td>${myObj.Pratos || 0}</td>
+					</tr>
+					<tr>
+						<td>Copos</td>
+						<td>${myObj.Copos || 0}</td>
+					</tr>
+					<tr>
+						<td>Guardanapos</td>
+						<td>${myObj.Guardanapos || 0}</td>
+					</tr>
+				</table>
+
+				<h2>Outros</h2>
+				<table>
+					<tr class="head-table">
+						<th>Items</th>
+						<th>Quatidade</th>
+					</tr>
+
+					<tr>
+						<td>Carvão</td>
+						<td>${myObj.Carvão || 0}</td>
+					</tr>
+					<tr>
+						<td>Sal Grosso</td>
+						<td>${myObj.SalGrosso || 0}</td>
+					</tr>
+				</table>
 			</div>
 
 			<footer>Chama Churras - Equipe DOGE</footer>

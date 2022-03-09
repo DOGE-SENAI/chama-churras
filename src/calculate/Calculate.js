@@ -234,7 +234,7 @@ function calcular() {
 				break;
 			case "Sal grosso":
 				sal = carneTotal > 30000 ? 3 : 2;
-				myObj["Sal grosso"] = sal;
+				myObj["SalGrosso"] = sal;
 				break;
 			default:
 				break;
